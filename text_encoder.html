@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Encoder/Decoder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <a href="./Tool_index.html">Tools</a><br><br>
+    <h2>Text Encoder/Decoder</h2>
+    <div>
+        <label for="encoding_select">Select Encoding:</label>
+        <select id="encoding_select">
+            <option value="base64">Base64</option>
+            <option value="utf-8">UTF-8</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <h3>Encode</h3>
+        <textarea id="text_input" rows="5" cols="50" placeholder="Enter text to encode"></textarea><br>
+        <button onclick="encodeText()">Encode</button>
+    </div>
+    <br>
+    <div>
+        <h3>Decode</h3>
+        <textarea id="result_output" rows="5" cols="50" placeholder="Encoded text will appear here"></textarea>
+    </div>
+
+    <button onclick="decodeText()">Decode</button>
+
+    <script>
+        function encodeText() {
+            var textToEncode = document.getElementById('text_input').value;
+            var selectedEncoding = document.getElementById('encoding_select').value;
+            var result = '';
+
+            switch (selectedEncoding) {
+                case 'base64':
+                    result = btoa(textToEncode);
+                    break;
+                case 'utf-8':
+                    result = encodeURIComponent(textToEncode);
+                    break;
+                default:
+                    result = 'Invalid encoding selected.';
+                    break;
+            }
+
+            document.getElementById('result_output').value = result;
+        }
+
+        function decodeText() {
+            var encodedText = document.getElementById('result_output').value;
+            var selectedEncoding = document.getElementById('encoding_select').value;
+            var result = '';
+
+            switch (selectedEncoding) {
+                case 'base64':
+                    result = atob(encodedText);
+                    break;
+                case 'utf-8':
+                    result = decodeURIComponent(encodedText);
+                    break;
+                default:
+                    result = 'Invalid encoding selected.';
+                    break;
+            }
+
+            document.getElementById('text_input').value = result;
+        }
+    </script>
+</body>
+</html>
