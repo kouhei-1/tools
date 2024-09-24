@@ -6,11 +6,14 @@
     
   </style>
   <script>
-    var svg=document.getElementById("svg")
-    svg=svg.value
-    const parser = new DOMParser()
-    const svgDoc = parser.parseFromString(svg, "image/svg+xml")
-    img.innerHTML(svgDog)
+    function draw(){
+      var svg=document.getElementById("svg")
+      svg=svg.value
+      const parser = new DOMParser()
+      const svgDoc = parser.parseFromString(svg, "image/svg+xml")
+      img.innerHTML(svgDog)
+    }
+    setInterval(draw,1000)
   </script>
 </head>
 <body>
