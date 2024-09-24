@@ -5,9 +5,17 @@
   <style>
     
   </style>
+  <script>
+    var svg=document.getElementById("svg")
+    svg=svg.value
+    const parser = new DOMParser()
+    const svgDoc = parser.parseFromString(svg, "image/svg+xml")
+    img.innerHTML(svgDog)
+  </script>
 </head>
 <body>
   <textarea id="svg" rows="10" cols="100%"><svg>
 </svg></textarea>
+  <div id="img"></div>
 </body>
 </html>
