@@ -6,12 +6,16 @@
     
   </style>
   <script>
-    function draw(){
-      var svg=document.getElementById("svg")
-      svg=svg.value
-      const parser = new DOMParser()
-      const svgDoc = parser.parseFromString(svg, "image/svg+xml")
-      img.innerHTML(svgDoc)
+    function draw() {
+      const svgString = document.getElementById("svg").value;
+      const parser = new DOMParser();
+      const svgDoc = parser.parseFromString(svgString, "image/svg+xml");
+      const svgElement = svgDoc.documentElement;
+      const imgElement = document.getElementById("img");
+      while (imgElement.firstChild) {
+        imgElement.removeChild(imgElement.firstChild);
+      }
+      imgElement.appendChild(svgElement);
     }
     setInterval(draw,1000)
   </script>
