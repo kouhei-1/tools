@@ -1,2 +1,2 @@
 # CREDIT
-[Teko(font)](https://fonts.google.com/specimen/Teko)
+[Oxanium(font)](https://fonts.google.com/specimen/Oxanium)
