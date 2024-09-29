@@ -1,2 +1,4 @@
 # CREDIT
-[Oxanium(font)](https://fonts.google.com/specimen/Oxanium)
+## FONTS
+[Oxanium](https://fonts.google.com/specimen/Oxanium)
+[Rajdhani](https://fonts.google.com/specimen/Rajdhani)
