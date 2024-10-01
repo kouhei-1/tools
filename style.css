@@ -1,0 +1,25 @@
+body{
+  font-family: "Rajdhani", sans-serif;
+  font-style: normal;
+  
+  .home{
+    font-weight: 500;
+    font-size: 100%
+  }
+  h1{
+    font-weight: 700;
+    font-size: 200%;
+  }
+  .link{
+          font-weight: 500;
+          font-size: 100%;
+  }
+  .desc{
+    font-family: "Noto Sans JP", sans-serif;
+    color: #606060; /*灰色*/
+    font-weight: 500;
+    font-size: 100%
+    padding-left: 10%; /*テキストのインデントを設定*/
+    margin: 0;
+  }        
+}
