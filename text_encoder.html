@@ -18,6 +18,7 @@
         <select id="encoding_select">
             <option value="base64">Base64</option>
             <option value="utf-8">UTF-8</option>
+            <option value="utf-16">UTF-16</option>
         </select>
     </div>
     <br>
@@ -35,6 +36,14 @@
     <button onclick="decodeText()">Decode</button>
 
     <script>
+        /*
+        const encoder = new TextEncoder('utf-16');
+        const encoded = encoder.encode('こんにちは');
+
+        // デコード
+        const decoder = new TextDecoder('utf-16');
+        const decoded = decoder.decode(encoded);
+        */
         function encodeText() {
             var textToEncode = document.getElementById('text_input').value;
             var selectedEncoding = document.getElementById('encoding_select').value;
@@ -46,6 +55,10 @@
                     break;
                 case 'utf-8':
                     result = encodeURIComponent(textToEncode);
+                    break;
+                case 'utf-16':
+                    var encoder = new TextEncoder('utf-16');
+                    result = encoder.encode(textToEncode);
                     break;
                 default:
                     result = 'Invalid encoding selected.';
@@ -66,6 +79,10 @@
                     break;
                 case 'utf-8':
                     result = decodeURIComponent(encodedText);
+                    break;
+                case 'utf-16':
+                    var decoder = new TextDecoder('utf-16');
+                    result = decoder.decode(encodedText);
                     break;
                 default:
                     result = 'Invalid encoding selected.';
