@@ -21,5 +21,8 @@ body{
     font-size: 100%
     padding-left: 10%; /*テキストのインデントを設定*/
     margin: 0;
-  }        
+  }
+  hr{
+    color: black;
+  }
 }
