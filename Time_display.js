@@ -1,4 +1,4 @@
-//("0"+num).slice(-2)
+//("0"+num).slice(-2) なんかスライスで四捨五入的なことができるっぽいね
 function showTime() {
   var now = new Date();
   var year = now.getFullYear();
