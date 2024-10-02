@@ -8,7 +8,7 @@ function showTime() {
   var minutes = ("0"+now.getMinutes()).slice(-2);
   var seconds = ("0"+now.getSeconds()).slice(-2);
   var after_decimal = ((Date.now()%1000/1000).toFixed(3)).slice(-4)
-  var text = year+"/"+month+"/"+date+"\n"+ hours + ":" + minutes + ":" + seconds+after_decimal;
+  var text = year+"/"+month+"/"+date+" "+ hours + ":" + minutes + ":" + seconds+after_decimal;
   document.getElementById("Local_time").innerHTML = text;
 }
 setInterval(showTime, 23);
