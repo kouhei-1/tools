@@ -18,8 +18,10 @@
         <select id="encoding_select">
             <option value="base64">Base64</option>
             <option value="utf-8">UTF-8</option>
+            <!--
             <option value="utf-16">UTF-16</option>
             <option value="shift_jis">Shift_JIS</option>
+            -->
         </select>
     </div>
     <br>
@@ -57,27 +59,12 @@
                 case 'utf-8':
                     result = encodeURIComponent(textToEncode);
                     break;
+                /*
                 case 'utf-16':
-                    
-                    function utf16Encode(str) {
-                        // 文字列をコードユニットの配列に変換
-                        const codeUnits = [...str].map(char => char.codePointAt(0));
-                        // Uint8Array を作成し、各コードユニットを2バイトに分割して格納
-                        const utf16Array = new Uint8Array(codeUnits.length * 2);
-                        for (let i = 0; i < codeUnits.length; i++) {
-                            const codeUnit = codeUnits[i];
-                            utf16Array[i * 2] = codeUnit >> 8;
-                            utf16Array[i * 2 + 1] = codeUnit & 0xff;
-                        }
-                      return utf16Array;
-                    }
-
-                    result = utf16Encode(textToEncode);
                     break;
                 case 'shift_jis':
-                    var encoder = new TextEncoder('shift_jis');
-                    result = encoder.encode(textToEncode);
                     break;
+                */
                 default:
                     result = 'Invalid encoding selected.';
                     break;
@@ -98,21 +85,12 @@
                 case 'utf-8':
                     result = decodeURIComponent(encodedText);
                     break;
+                /*
                 case 'utf-16':
-                    function utf16Decode(utf16Array) {
-                        const codeUnits = [];
-                        for (let i = 0; i < utf16Array.length; i += 2) {
-                            codeUnits.push((utf16Array[i] << 8) | utf16Array[i + 1]);
-                        }
-
-                        return String.fromCodePoint(...codeUnits);
-                    }
-                    result = utf16Decode(encodedText)
                     break;
                 case 'shift_jis':
-                    var decoder = new TextDecoder('shift_jis');
-                    result = decoder.decode(encodedText);
                     break;
+                */
                 default:
                     result = 'Invalid encoding selected.';
                     break;
