@@ -19,6 +19,7 @@
             <option value="base64">Base64</option>
             <option value="utf-8">UTF-8</option>
             <option value="utf-16">UTF-16</option>
+            <option value="shift_jis">Shift_JIS</option>
         </select>
     </div>
     <br>
@@ -60,6 +61,10 @@
                     var encoder = new TextEncoder('utf-16');
                     result = encoder.encode(textToEncode);
                     break;
+                case 'shift_jis':
+                    var encoder = new TextEncoder('shift_jis');
+                    result = encoder.encode(textToEncode);
+                    break;
                 default:
                     result = 'Invalid encoding selected.';
                     break;
@@ -82,6 +87,10 @@
                     break;
                 case 'utf-16':
                     var decoder = new TextDecoder('utf-16');
+                    result = decoder.decode(encodedText);
+                    break;
+                case 'shift_jis':
+                    var decoder = new TextDecoder('shift_jis');
                     result = decoder.decode(encodedText);
                     break;
                 default:
