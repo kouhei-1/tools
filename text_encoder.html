@@ -100,14 +100,14 @@
                     break;
                 case 'utf-16':
                     function utf16Decode(utf16Array) {
-  const codeUnits = [];
-  for (let i = 0; i < utf16Array.length; i += 2) {
-    codeUnits.push((utf16Array[i] << 8) | utf16Array[i + 1]);
-  }
+                        const codeUnits = [];
+                        for (let i = 0; i < utf16Array.length; i += 2) {
+                            codeUnits.push((utf16Array[i] << 8) | utf16Array[i + 1]);
+                        }
 
-  return String.fromCodePoint(...codeUnits);
-}
-                    result = decoder.decode(encodedText);
+                        return String.fromCodePoint(...codeUnits);
+                    }
+                    result = utf16Decode(encodedText)
                     break;
                 case 'shift_jis':
                     var decoder = new TextDecoder('shift_jis');
