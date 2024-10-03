@@ -1,14 +1,15 @@
+//こちらでファイルをロードする時のスクリプトが組まれます
 function readFile() {
-  var fileInput = document.getElementById('file_input');
+  var fileInput = document.getElementById('file_input'); //htmlからファイルをもらいます
   var file = fileInput.files[0];
-  var fileReader = new FileReader();
+  var fileReader = new FileReader(); //なんかファイルリーダーとかいうよくわからんやつを使うっぽいです
 
   fileReader.onload = function(event) {
     var fileContent = event.target.result;
-    document.getElementById('file_content').value = fileContent;
+    document.getElementById('file_content').value = fileContent; //ここでhtmlに返します
   };
 
-  fileReader.readAsText(file, 'UTF-8'); // UTF-8 エンコーディングを指定します
+  fileReader.readAsText(file, 'UTF-8');
 }
 
 function downloadFile() {
