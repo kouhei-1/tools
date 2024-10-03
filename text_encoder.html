@@ -60,15 +60,15 @@
                 case 'utf-16':
                     
                     function utf16Encode(str) {
-                    // 文字列をコードユニットの配列に変換
-                    const codeUnits = [...str].map(char => char.codePointAt(0));
-                    // Uint8Array を作成し、各コードユニットを2バイトに分割して格納
-                    const utf16Array = new Uint8Array(codeUnits.length * 2);
-                    for (let i = 0; i < codeUnits.length; i++) {
-                        const codeUnit = codeUnits[i];
-                        utf16Array[i * 2] = codeUnit >> 8;
-                        utf16Array[i * 2 + 1] = codeUnit & 0xff;
-                    }
+                        // 文字列をコードユニットの配列に変換
+                        const codeUnits = [...str].map(char => char.codePointAt(0));
+                        // Uint8Array を作成し、各コードユニットを2バイトに分割して格納
+                        const utf16Array = new Uint8Array(codeUnits.length * 2);
+                        for (let i = 0; i < codeUnits.length; i++) {
+                            const codeUnit = codeUnits[i];
+                            utf16Array[i * 2] = codeUnit >> 8;
+                            utf16Array[i * 2 + 1] = codeUnit & 0xff;
+                        }
                       return utf16Array;
                     }
 
@@ -99,7 +99,14 @@
                     result = decodeURIComponent(encodedText);
                     break;
                 case 'utf-16':
-                    var decoder = new TextDecoder('utf-16');
+                    function utf16Decode(utf16Array) {
+  const codeUnits = [];
+  for (let i = 0; i < utf16Array.length; i += 2) {
+    codeUnits.push((utf16Array[i] << 8) | utf16Array[i + 1]);
+  }
+
+  return String.fromCodePoint(...codeUnits);
+}
                     result = decoder.decode(encodedText);
                     break;
                 case 'shift_jis':
