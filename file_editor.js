@@ -15,15 +15,15 @@ function downloadFile() {
   var fileContent = document.getElementById('file_content').value;
   var filename = document.getElementById('filename').value || 'edited_file';
   var extension = document.getElementById('extension').value || 'txt';
-            var filenameWithExtension = filename + '.' + extension;
+  var filenameWithExtension = filename + '.' + extension;
             
-            var blob = new Blob([fileContent], { type: 'text/plain' });
-            var url = URL.createObjectURL(blob);
+  var blob = new Blob([fileContent], { type: 'text/plain' });
+  var url = URL.createObjectURL(blob);
 
-            var a = document.createElement('a');
-            a.href = url;
-            a.download = filenameWithExtension;
-            a.click();
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = filenameWithExtension;
+  a.click();
 
-    URL.revokeObjectURL(url);
+  URL.revokeObjectURL(url);
 }
