@@ -58,8 +58,21 @@
                     result = encodeURIComponent(textToEncode);
                     break;
                 case 'utf-16':
-                    var encoder = new TextEncoder('utf-16');
-                    result = encoder.encode(textToEncode);
+                    
+                    function utf16Encode(str) {
+                    // 文字列をコードユニットの配列に変換
+                    const codeUnits = [...str].map(char => char.codePointAt(0));
+                    // Uint8Array を作成し、各コードユニットを2バイトに分割して格納
+                    const utf16Array = new Uint8Array(codeUnits.length * 2);
+                    for (let i = 0; i < codeUnits.length; i++) {
+                        const codeUnit = codeUnits[i];
+                        utf16Array[i * 2] = codeUnit >> 8;
+                        utf16Array[i * 2 + 1] = codeUnit & 0xff;
+                    }
+                      return utf16Array;
+                    }
+
+                    result = utf16Encode(textToEncode);
                     break;
                 case 'shift_jis':
                     var encoder = new TextEncoder('shift_jis');
