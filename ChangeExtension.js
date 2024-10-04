@@ -6,8 +6,7 @@ function changeExtension() {
 
   if (file && newExtension) {
     var oldExtension = file.name.split('.').pop();
-    var newFileName = file.name.replace("." + oldExtension, "." + newExtension);
-                
+    var newFileName = file.name.replace("." + oldExtension, "." + newExtension);                
     var link = document.createElement("a");
     link.href = URL.createObjectURL(file);
     link.download = newFileName;
