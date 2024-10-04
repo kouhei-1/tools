@@ -9,7 +9,7 @@ function readFile() {
     document.getElementById('file_content').value = fileContent; //ここでhtmlに返します
   };
 
-  fileReader.readAsText(file, 'UTF-8');
+  fileReader.readAsText(file, 'UTF-8'); //utf-8エンコード方式でなんたら
 }
 
 function downloadFile() {
