@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      
-    </style>
+    <script>
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+      var go_url="https://kouhei-1.github.io/tool"
+      var wait_sec=10
+      while(wait_sec>0){
+        document.getElementById("wait_time").innerHTML = wait_sec;
+        sleep(1000);
+        wait_sec--
+      }
+      open(go_url,"_self")
+    </script>
   </head>
   <body>
     <h1>404 not found</h1><br>
     申し訳ありませんが、あなたがアクセスしたURLは存在しないか削除されたようです。<br>
     もしリンクがこのサイト内のものであるならば<a href="https://github.com/kouhei-1/tool/issues">issues</a>までお願いします。<br>
     もしくは<a href="https://kouhei-1.github.io/tool">tool index</a>まで。*リンクをクリックするとtoolページのインデックスに飛びます
+
+    あと<div id="wait_time"></div>秒で<a href="https://kouhei-1.github.io/tool">tool index</a>に遷移します
   </body>
 </html>
