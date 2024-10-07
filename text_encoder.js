@@ -5,7 +5,7 @@
   // デコード
   const decoder = new TextDecoder('utf-16');
   const decoded = decoder.decode(encoded);
-  */
+*/
 function encodeText() {
   var textToEncode = document.getElementById('text_input').value;
   var selectedEncoding = document.getElementById('encoding_select').value;
@@ -60,3 +60,10 @@ function decodeText() {
 
   document.getElementById('text_input').value = result;
 }
+
+
+/*
+Why!? why do u found it!?
+景品: ないよ
+残念だったな
+*/
