@@ -11,7 +11,7 @@
 
     <script>
       function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
+        setTimeout(console.log(wait_sec), ms));
       }
 
       var go_url="https://kouhei-1.github.io/tool"
