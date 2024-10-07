@@ -17,7 +17,7 @@
           for(let j = 0;j<parameter2;j++){
             a++;
             if(Number.isInteger(Math.sqrt(a*a + b*b))==true){
-              let c = Math.sqrt(a*a + b*b); //ここで角cを決定
+              var c = Math.sqrt(a*a + b*b); //ここで角cを決定
               text=`${text}${a},${b},${c}\n`
             }
           }
