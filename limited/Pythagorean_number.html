@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script>
+      open_csv(){
+        var parameter1=document.getElementById("parameter1");
+        var parameter2=document.getElementById("parameter2");
+        let a = 0;//a角
+        let b = 0;//b角
+        let c = 0;//c角
+        var text = "data:text/csv"
+  
+        for(let i = 0; i<parameter1; i++){
+          b++;
+          a = (b-1);
+          for(let j = 0;j<parameter2;j++){
+            a++;
+            if(Number.isInteger(Math.sqrt(a*a + b*b))==true){
+              let c = Math.sqrt(a*a + b*b); //ここで角cを決定
+              text=`${text}${a},${b},${c}\n`
+            }
+          }
+        }
+        open(text,"_brank")
+      }
+    </script>
+  </head>
+  <body>
+    <a href=".">Limited_tools</a>
+    <h1>Pythagorean number</h1><br>
+    「どのくらいまで生成するんか?」的なパラメータ:<br>
+    <input id="parameter1" type="number"></input>
+    <input id="parameter2" type="number"></input>
+
+    <input id="pytha" type="button" onclick="open_csv();>
+  </body>
+</html>
