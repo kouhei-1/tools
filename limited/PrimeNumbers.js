@@ -42,5 +42,6 @@ function generatePrimeNumbers() {
   // ダウンロードリンクの作成
   const downloadLink = document.createElement('a');
   downloadLink.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csvContent);
+  downloadLink.download="primeNumbers.csv"
   downloadLink.click();
 }
