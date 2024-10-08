@@ -40,7 +40,7 @@ function generatePrimeNumbers() {
   // CSV形式に変換
   const csvContent = primeNumbers.join(',');
   // ダウンロードリンクの作成
-  const downloadLink = document.getElementById('downloadLink');
+  const downloadLink = document.createElement('a');
   downloadLink.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csvContent);
   downloadLink.click();
 }
