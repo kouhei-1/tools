@@ -45,3 +45,9 @@ function generatePrimeNumbers() {
   downloadLink.download='primeNumbers.csv'
   downloadLink.click();
 }
+
+/*
+console.log("no");//qwertyuiopasdfghjklzxcvbnm//qwertyuiopasdfghjklzxcvbnm//qwertyuiopasdfghjklzxcvbnm
+console.log("no");//qwertyuiopasdfghjklzxcvbnm//qwertyuiopasdfghjklzxcvbnm//qwertyuiopasdfghjklzxcvbnm
+console.log("no");//qwertyuiopasdfghjklzxcvbnm//qwertyuiopasdfghjklzxcvbnm//qwertyuiopasdfghjklzxcvbnm
+console.log("no");//qwertyuiopasdfghjklzxcvbnm//qwertyuiopasdfghjklzxcvbnm//qwertyuiopasdfghjklzxcvbnm
