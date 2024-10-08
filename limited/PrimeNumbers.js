@@ -18,7 +18,7 @@ function generatePrimeNumbers() {
 }
 */
 
-function generatePrimeNumbersSieve() {
+function generatePrimeNumbers() {
   const upperLimit = parseInt(document.getElementById('upperLimit').value);
   const primes = Array(upperLimit + 1).fill(true);
   primes[0] = primes[1] = false;
