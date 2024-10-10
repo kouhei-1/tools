@@ -34,21 +34,3 @@ function Unixtime_script() {
 setInterval(showTime, 17);
 setInterval(UTCTime, 13);
 setInterval(Unixtime_script, 13);
-
-/*
-setInterval(showTime, 23);
-setInterval(UTCTime, 27);
-setInterval(Unixtime_script, 29);
-
-setInterval(showTime, 23);
-setInterval(UTCTime, 27);
-setInterval(Unixtime_script, 29);
-
-setInterval(showTime, 23);
-setInterval(UTCTime, 27);
-setInterval(Unixtime_script, 29);
-
-setInterval(showTime, 23);
-setInterval(UTCTime, 27);
-setInterval(Unixtime_script, 29);
-*/
