@@ -60,13 +60,3 @@ function decodeText() {
 
   document.getElementById('text_input').value = result;
 }
-
-
-/*
-Why!? why do u found it!?
-景品: ないよ
-残念だったな
-
-JUU1JTkwJTlCJUUzJTgxJUFFJUU2JTk0JUJGJUU2JUIyJUJCJUU0JUJBJUJBJUU3JTk0JTlGJUUzJTgxJUFGJUU3JUI1JTgyJUUzJTgyJThGJUUzJTgyJThBJUUzJTgxJUEwJUUzJTgwJTgyJTBBJUU2JUJEJTk0JUUzJTgxJThGJUU1JUI5JUI4JUU3JUE2JThGJUUzJTgxJTk3JUUzJTgxJUFBJUUzJTgxJTk1JUUzJTgxJTg0
-
-*/
